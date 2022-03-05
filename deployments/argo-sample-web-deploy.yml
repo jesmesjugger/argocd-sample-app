@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argo-node-web-app-deployment
+  namespace: argo-node-web-project
+spec:
+  selector:
+    matchLabels:
+      app: argo-node-web-app
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: argo-node-web-app
+        version: 1.1.9
+    spec:
+      containers:
+      - name: argo-node-web-app
+        image: mkowe/vue-weather-app:prod
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: argo-config-web.yaml
+        ports:
+        - containerPort: 8080

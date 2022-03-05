@@ -4,7 +4,7 @@
   "description": "Sample gitOps project with ArgoCd",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -15,8 +15,6 @@
   "bugs": {
     "url": "https://github.com/jesmesjugger/argocd-sample-app/issues"
   },
-  "homepage": "https://github.com/jesmesjugger/argocd-sample-app#readme",
-  "dependencies": {
-    "express": "^4.17.3"
-  }
+  "homepage": "https://github.com/jesmesjugger/argocd-sample-app#readme"
 }
+
