@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: argo-node-web
 spec:
+type: LoadBalancer
   ports:
   - port: 80
     targetPort: 80
