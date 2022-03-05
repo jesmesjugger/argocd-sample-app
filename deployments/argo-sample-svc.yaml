@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: argo-node-svc
+  name: argo-node-web
 spec:
   ports:
   - port: 80
