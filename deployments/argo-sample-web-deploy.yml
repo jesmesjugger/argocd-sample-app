@@ -1,37 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
-  labels:
-    app: argo-node-web
   name: argo-node-web
-  namespace: default
 spec:
-  replicas: 2
+  replicas: 1
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: argo-node-web
-  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
-        app:argo-node-web
+        app: argo-node-web
     spec:
       containers:
-      - image: mkowe/vue-weather-app:prod 
+      - image: mkowe/vue-weather-app:prod
         name: argo-node-web
         ports:
         - containerPort: 80
-        readinessProbe:
-          httpGet:
-            path: /
-            port: 80
-          initialDelaySeconds: 3
-          periodSeconds: 3 
-        livenessProbe:
-          httpGet:
-            path: /
-            port: 80
-          initialDelaySeconds: 3
-          periodSeconds: 3
